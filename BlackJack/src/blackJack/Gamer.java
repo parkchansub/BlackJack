@@ -6,9 +6,11 @@ import java.util.List;
 public class Gamer implements Player{
     private List<Card> cards;
     private boolean turn;
+    private String name;
     
-    public Gamer(){
+    public Gamer(String name){
     	cards = new ArrayList<>();
+    	this.name = name;
     }
     @Override
     public void receiveCard(Card card){
@@ -18,7 +20,7 @@ public class Gamer implements Player{
     @Override
     public void showCards(){
     	StringBuilder sb = new StringBuilder();
-    	sb.append("현재 GAMER 보유 카드 목록 \n");
+    	sb.append("현재 "+name+" 보유 카드 목록 \n");
     	
     	for(Card card : cards){
     		sb.append(card.toString());
@@ -45,6 +47,10 @@ public class Gamer implements Player{
 
 	public void setTurn(boolean turn) {
 		this.turn = turn;
+	}
+	@Override
+	public String getName() {
+		return this.name;
 	}
 	
 	

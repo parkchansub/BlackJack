@@ -14,4 +14,6 @@ public interface Player {
 	void turnOn();
 	
 	boolean isTurn();
+	
+	String getName();
 }
