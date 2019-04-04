@@ -20,6 +20,8 @@ public class Game {
 	        System.out.println("승자는 "+winner.getName());
 	        
 	    }
+	 
+	 
 	 private List<Player> playingPhase(Scanner sc, CardDeck cardDeck, List<Player> players){
 		 List<Player> cardReceivedPlayers;
 		 while(true){
@@ -57,7 +59,7 @@ public class Game {
 	 
 	 public static final String STOP_RECEIVE_CARD = "0";
 	 private boolean isReceiveCard(Scanner sc){
-		 System.out.println("카드를 뽑겠습니다까? 종료를 원하시면 0을 입력하세요.");
+		 System.out.println("카드를 뽑겠습니까? 종료를 원하시면 0을 입력하세요.");
 		 return !STOP_RECEIVE_CARD.equals(sc.nextLine());
 	 }
 
