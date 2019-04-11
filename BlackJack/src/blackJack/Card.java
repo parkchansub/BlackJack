@@ -1,7 +1,7 @@
 package blackJack;
 
 public class Card {
-    private String pattern;
+    private Pattern pattern;
     private String denomination;
     private int point; 
     
@@ -9,7 +9,7 @@ public class Card {
     //set함수를 통하여 객체 생성후 값을 넣는 방식이 아닌 생성자에 파라메터를 설저하여 해당 값으로 객체 생성하는 이유
     // 1. card.java 에서 마지막 숫자와 무늬를 마음대로 확용하더라도 CardDeck은 아무런 영향이 없다
     // 2. 객체 생성시 값을 넣는것을 강제화 시킬수있다.  
-    public Card(String pattern, int index){
+    public Card(Pattern pattern, int index){
     	this.pattern = pattern;
     	this.denomination = numberToDenomination(index);
     	this.point = numberToPoint(index);
@@ -37,12 +37,28 @@ public class Card {
     }
     
 
-    public String getPattern() {
+    public Pattern getPattern() {
         return pattern;
     }
 
-    public void setPattern(String pattern) {
+    public void setPattern(Pattern pattern) {
         this.pattern = pattern;
+    }
+    
+    public enum Pattern{
+    	SPADE("spade"),
+    	HEART("heart"),
+    	DIAMOND("diamond"),
+    	CLUB("club");
+    	
+    	private String value;
+    	
+    	Pattern(){}
+    	
+    	Pattern(String value){
+    		this.value=value;
+    	}
+    	
     }
 
     public String getDenomination() {

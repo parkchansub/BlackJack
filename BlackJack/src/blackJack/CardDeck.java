@@ -5,7 +5,6 @@ import java.util.List;
 
 public class CardDeck {
     private List<Card> cards; 
-    private static final String[] PATTERNS = {"spade", "heart", "diamond", "club"};
     private static final int CARD_COUNT = 13;
     
     public CardDeck(){
@@ -15,7 +14,7 @@ public class CardDeck {
     private List<Card> generateCards() {
     	cards = new LinkedList<>();
     	
-    	for(String pattern : PATTERNS){
+    	for(Card.Pattern pattern : Card.Pattern.values()){
     		for(int i=1;i<=CARD_COUNT;i++){
         		//객체를 생성한 뒤에 set을 이용하여 값을 넣는 방식이 아닌 객체 생성과 동시에 값을 넣는 방식으로 수정
         		Card card = new Card(pattern ,i);
